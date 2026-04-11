@@ -7,7 +7,7 @@
   <meta name="description" content="Dr David Rosewarne — Consultant Radiologist, New Cross Hospital. Research interests in clinical AI, NLP audit, and digital medicine." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
       --navy:      #0d2144;
@@ -55,20 +55,18 @@
       color: var(--white); text-decoration: none; letter-spacing: 0.01em;
       white-space: nowrap;
     }
-    .nav-links { display: flex; gap: 1.6rem; list-style: none; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
     .nav-links a {
       color: rgba(255,255,255,0.62); text-decoration: none;
       font-family: 'Inter', sans-serif;
-      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em;
+      font-size: 0.76rem; font-weight: 500; letter-spacing: 0.05em;
       text-transform: uppercase; transition: color 0.15s;
       white-space: nowrap;
     }
     .nav-links a:hover { color: var(--accent); }
-    .nav-links a.locked { color: rgba(255,255,255,0.35); }
+    .nav-links a.locked { color: rgba(255,255,255,0.3); }
     .nav-links a.locked:hover { color: var(--accent); }
-    .nav-links a.locked::after {
-      content: ' ⚿'; font-size: 0.7rem; opacity: 0.6;
-    }
+    .nav-links a.locked::after { content: ' ⚿'; font-size: 0.65rem; }
 
     .hamburger {
       display: none; flex-direction: column; gap: 5px;
@@ -169,67 +167,60 @@
       width: 8px; height: 8px; border-radius: 50%;
       background: var(--blue-mid); margin-top: 0.55rem; flex-shrink: 0;
     }
-    .int-dot.highlight { background: var(--accent); box-shadow: 0 0 0 3px rgba(122,174,232,0.25); }
+    .int-dot.highlight {
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(122,174,232,0.25);
+    }
     .int-title {
       font-weight: 600; font-size: 0.95rem; color: var(--navy);
       margin-bottom: 0.25rem;
     }
-    .int-desc {
-      font-size: 0.9rem; color: var(--text-mid); line-height: 1.65;
-    }
+    .int-desc { font-size: 0.9rem; color: var(--text-mid); line-height: 1.65; }
     .int-desc a { color: var(--blue-mid); }
     .int-more {
       display: inline-block; margin-top: 0.4rem;
       font-family: 'Inter', sans-serif;
       font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
       color: var(--blue-mid); text-decoration: none;
-      border-bottom: 1px solid var(--blue-mid);
-      padding-bottom: 1px;
+      border-bottom: 1px solid var(--blue-mid); padding-bottom: 1px;
     }
     .int-more:hover { color: var(--navy); border-color: var(--navy); }
 
-    /* ── CLEAR SECTION ───────────────────────────── */
-    #clear {
+    /* ── CLEARAUDIT SECTION ──────────────────────── */
+    .clearaudit-wrap {
       background: var(--off-white);
       border-left: 4px solid var(--blue-mid);
-      padding: 2rem 2rem 2rem 2rem;
       border-radius: 0 6px 6px 0;
-      margin-bottom: 0;
+      padding: 2rem;
     }
-    #clear h2 {
-      border-bottom-color: var(--blue-mid);
-    }
-    .clear-label {
+    .clearaudit-wrap h2 { border-bottom-color: var(--blue-mid); }
+    .section-sublabel {
       font-family: 'Inter', sans-serif;
       font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
       text-transform: uppercase; color: var(--blue-light);
       margin-bottom: 0.5rem;
     }
-    .clear-body p {
+    .clearaudit-wrap p {
       font-size: 0.97rem; color: var(--text-mid); line-height: 1.8;
       margin-bottom: 0.9rem;
     }
-    .clear-body p:last-child { margin-bottom: 0; }
-    .clear-body strong { color: var(--text); }
-    .clear-workstreams {
+    .clearaudit-wrap p:last-child { margin-bottom: 0; }
+    .clearaudit-wrap strong { color: var(--text); }
+    .workstream-list {
       margin: 1.5rem 0;
-      border: 1px solid var(--rule);
-      border-radius: 6px; overflow: hidden;
+      border: 1px solid var(--rule); border-radius: 6px; overflow: hidden;
     }
-    .clear-ws {
+    .ws-item {
       display: grid; grid-template-columns: auto 1fr;
       gap: 1rem; padding: 0.9rem 1.2rem;
-      border-bottom: 1px solid var(--rule);
-      align-items: start;
+      border-bottom: 1px solid var(--rule); align-items: start;
     }
-    .clear-ws:last-child { border-bottom: none; }
+    .ws-item:last-child { border-bottom: none; }
     .ws-num {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem; font-weight: 700;
+      font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 700;
       color: var(--white); background: var(--blue-mid);
       border-radius: 4px; padding: 0.2rem 0.5rem;
-      min-width: 28px; text-align: center;
-      margin-top: 0.1rem;
+      min-width: 28px; text-align: center; margin-top: 0.1rem;
     }
     .ws-title { font-weight: 600; font-size: 0.9rem; color: var(--navy); margin-bottom: 0.15rem; }
     .ws-desc { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
@@ -243,10 +234,8 @@
       margin-bottom: 0.9rem;
     }
     .pub-entry {
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--rule);
-      font-size: 0.93rem; line-height: 1.65;
-      color: var(--text-mid);
+      padding: 0.75rem 0; border-bottom: 1px solid var(--rule);
+      font-size: 0.93rem; line-height: 1.65; color: var(--text-mid);
     }
     .pub-entry:last-child { border-bottom: none; }
     .pub-entry a {
@@ -257,40 +246,44 @@
     .pub-me { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
 
     /* ── POSITIONS ───────────────────────────────── */
-    .pos-entry {
-      padding: 0.85rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
+    .pos-entry { padding: 0.85rem 0; border-bottom: 1px solid var(--rule); }
     .pos-entry:last-child { border-bottom: none; }
     .pos-header {
       display: flex; justify-content: space-between;
-      align-items: baseline; gap: 1rem; flex-wrap: wrap;
-      margin-bottom: 0.2rem;
+      align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.2rem;
     }
     .pos-period {
       font-family: 'Inter', sans-serif;
       font-size: 0.78rem; font-weight: 500; color: var(--text-light);
       white-space: nowrap; flex-shrink: 0;
     }
-    .pos-org {
-      font-size: 0.88rem; color: var(--blue-mid);
-      font-style: italic; margin-bottom: 0.3rem;
-    }
+    .pos-org { font-size: 0.88rem; color: var(--blue-mid); font-style: italic; margin-bottom: 0.3rem; }
     .pos-desc { font-size: 0.9rem; color: var(--text-mid); line-height: 1.65; }
 
-    /* ── AI STRATEGY SECTION ─────────────────────── */
-    #ai-strategy { margin-top: 1rem; }
+    /* ── COLLABORATORS ───────────────────────────── */
+    .collab-entry { padding: 1rem 0; border-bottom: 1px solid var(--rule); }
+    .collab-entry:last-child { border-bottom: none; }
+    .collab-header { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.3rem; }
+    .collab-name { font-weight: 600; font-size: 1rem; color: var(--navy); }
+    .collab-role {
+      font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.05em; color: var(--blue-light); text-transform: uppercase;
+    }
+    .collab-link {
+      font-family: 'Inter', sans-serif; font-size: 0.82rem;
+      color: var(--blue-mid); text-decoration: none; display: inline-block;
+      margin-bottom: 0.4rem;
+    }
+    .collab-link:hover { text-decoration: underline; }
+    .collab-desc { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
 
+    /* ── AI STRATEGY / PASSWORD GATE ────────────── */
     .strategy-lock {
       background: var(--off-white); border: 1px solid var(--rule);
       border-radius: 8px; padding: 2.5rem 2rem; text-align: center;
     }
-    .strategy-lock p {
-      font-size: 0.9rem; color: var(--text-mid); margin-bottom: 1.2rem;
-    }
-    .strategy-lock-icon {
-      font-size: 1.6rem; margin-bottom: 0.75rem; color: var(--text-light);
-    }
+    .strategy-lock-icon { font-size: 1.6rem; margin-bottom: 0.75rem; color: var(--text-light); }
+    .strategy-lock p { font-size: 0.9rem; color: var(--text-mid); margin-bottom: 1.2rem; }
     .pw-row {
       display: flex; gap: 0.5rem; justify-content: center;
       max-width: 320px; margin: 0 auto;
@@ -298,14 +291,12 @@
     .pw-input {
       flex: 1; padding: 0.55rem 0.9rem;
       border: 1.5px solid var(--rule); border-radius: 6px;
-      font-family: 'Inter', sans-serif; font-size: 0.9rem;
-      color: var(--text); background: var(--white);
-      outline: none; transition: border-color 0.15s;
+      font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--text);
+      background: var(--white); outline: none; transition: border-color 0.15s;
     }
     .pw-input:focus { border-color: var(--blue-mid); }
     .pw-btn {
-      padding: 0.55rem 1.1rem;
-      background: var(--blue); color: var(--white);
+      padding: 0.55rem 1.1rem; background: var(--blue); color: var(--white);
       border: none; border-radius: 6px;
       font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600;
       cursor: pointer; transition: background 0.15s;
@@ -313,68 +304,209 @@
     .pw-btn:hover { background: var(--blue-mid); }
     .pw-error {
       display: none; margin-top: 0.6rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8rem; color: #c0392b;
+      font-family: 'Inter', sans-serif; font-size: 0.8rem; color: #c0392b;
     }
-
     .strategy-content { display: none; }
 
-    /* Strategy document styles */
-    .strat-section { margin-bottom: 2.8rem; }
-    .strat-section:last-child { margin-bottom: 0; }
-    .strat-section h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem; font-weight: 600; color: var(--navy);
-      margin-bottom: 0.9rem; padding-bottom: 0.4rem;
-      border-bottom: 1px solid var(--rule);
+    /* ── RCR DOCUMENT (embedded) ─────────────────── */
+    .rcr-doc {
+      font-family: 'Source Serif 4', Georgia, serif;
     }
-    .strat-section p, .strat-section li {
-      font-size: 0.93rem; color: var(--text-mid); line-height: 1.8;
-      margin-bottom: 0.6rem;
-    }
-    .strat-section ul, .strat-section ol {
-      padding-left: 1.4rem; margin-bottom: 0.8rem;
-    }
-    .strat-section li { margin-bottom: 0.3rem; }
-    .strat-section strong { color: var(--text); }
 
-    .strat-meta {
-      background: var(--off-white); border: 1px solid var(--rule);
-      border-radius: 6px; padding: 1rem 1.4rem;
-      margin-bottom: 2rem;
+    .rcr-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 1rem; display: block;
     }
-    .strat-meta p {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8rem; color: var(--text-light); margin: 0; line-height: 1.6;
-    }
-    .strat-meta p + p { margin-top: 0.15rem; }
 
-    .strat-table {
-      width: 100%; border-collapse: collapse;
-      font-size: 0.85rem; margin: 1rem 0;
-    }
-    .strat-table th {
+    .rcr-header {
       background: var(--navy); color: var(--white);
-      font-family: 'Inter', sans-serif; font-weight: 600;
-      font-size: 0.75rem; letter-spacing: 0.04em;
-      padding: 0.6rem 0.8rem; text-align: left;
+      padding: 2.5rem 2rem 2rem; border-radius: 6px 6px 0 0;
+      margin-bottom: 0; position: relative; overflow: hidden;
     }
-    .strat-table td {
-      padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--rule);
-      color: var(--text-mid); vertical-align: top;
+    .rcr-header::before {
+      content: ''; position: absolute;
+      top: -40px; right: -40px; width: 200px; height: 200px;
+      border: 1px solid rgba(122,174,232,0.1); border-radius: 50%;
     }
-    .strat-table tr:last-child td { border-bottom: none; }
-    .strat-table tr:nth-child(even) td { background: var(--off-white); }
+    .rcr-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.4rem);
+      font-weight: 600; line-height: 1.2;
+      color: var(--white); margin-bottom: 0.8rem;
+    }
+    .rcr-header h3 em { font-style: italic; color: var(--accent); }
+    .rcr-header-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem; color: rgba(255,255,255,0.45);
+      letter-spacing: 0.05em;
+    }
 
-    .strat-callout {
-      border-left: 3px solid var(--blue-mid);
-      background: #f0f5ff;
-      padding: 0.9rem 1.2rem; border-radius: 0 6px 6px 0;
-      margin: 1rem 0;
+    .rcr-thesis {
+      background: var(--blue); color: var(--white);
+      padding: 1.5rem 2rem;
+      border-left: none; margin-bottom: 2rem;
     }
-    .strat-callout p {
-      font-size: 0.9rem; color: var(--navy);
-      margin: 0; font-style: italic; line-height: 1.65;
+    .rcr-thesis p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+      line-height: 1.6; color: rgba(255,255,255,0.92);
+    }
+
+    .rcr-stream { padding: 1.5rem 0; border-bottom: 1px solid var(--rule); }
+    .rcr-stream:last-of-type { border-bottom: none; }
+
+    .rcr-stream-header {
+      display: flex; align-items: baseline; gap: 1.2rem;
+      margin-bottom: 1.8rem; flex-wrap: wrap;
+    }
+    .rcr-stream-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem; font-weight: 600;
+      color: var(--rule); line-height: 1; flex-shrink: 0;
+    }
+    .rcr-stream-title-block { flex: 1; min-width: 200px; }
+    .rcr-stream-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--blue-light);
+      display: block; margin-bottom: 0.35rem;
+    }
+    .rcr-stream-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+      font-weight: 600; line-height: 1.25; color: var(--navy);
+    }
+
+    .rcr-body { color: var(--text-mid); margin-bottom: 1.5rem; }
+    .rcr-body p { font-size: 0.93rem; line-height: 1.8; margin-bottom: 0.9rem; }
+    .rcr-body p:last-child { margin-bottom: 0; }
+    .rcr-body strong { color: var(--text); }
+
+    .rcr-pull {
+      border-left: 3px solid var(--blue-mid);
+      padding: 1rem 1.4rem; margin: 1.5rem 0;
+      background: #eef4ff; border-radius: 0 4px 4px 0;
+    }
+    .rcr-pull p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.97rem; line-height: 1.6; color: var(--navy);
+    }
+
+    .rcr-arg-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1px; background: var(--rule);
+      border: 1px solid var(--rule); margin: 1.5rem 0;
+    }
+    .rcr-arg-card {
+      background: var(--white); padding: 1.3rem 1.2rem; transition: background 0.15s;
+    }
+    .rcr-arg-card:hover { background: var(--off-white); }
+    .rcr-arg-icon {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.14em;
+      color: var(--text-light); display: block;
+      margin-bottom: 0.5rem; text-transform: uppercase;
+    }
+    .rcr-arg-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem; font-weight: 600;
+      margin-bottom: 0.45rem; line-height: 1.3; color: var(--navy);
+    }
+    .rcr-arg-card p { font-size: 0.84rem; color: var(--text-mid); line-height: 1.6; }
+
+    .rcr-code {
+      background: var(--navy); border-radius: 4px;
+      margin: 1.5rem 0; overflow: hidden;
+    }
+    .rcr-code-header {
+      display: flex; align-items: center;
+      padding: 0.6rem 1rem; gap: 0.4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .rcr-dot { width: 9px; height: 9px; border-radius: 50%; }
+    .rcr-dot-r { background: #ff5f57; }
+    .rcr-dot-y { background: #febc2e; }
+    .rcr-dot-g { background: #28c840; }
+    .rcr-code-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem; color: rgba(255,255,255,0.28);
+      margin-left: auto; letter-spacing: 0.08em;
+    }
+    .rcr-code-body { padding: 1.2rem 1.2rem; overflow-x: auto; }
+    .rcr-code-body pre {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.77rem; line-height: 1.65;
+      color: #a8d8a8; white-space: pre;
+    }
+    .c-comment { color: #4a6a5a; }
+    .c-keyword { color: #82aaff; }
+    .c-string  { color: #f9c74f; }
+    .c-fn      { color: #c792ea; }
+    .c-var     { color: #89ddff; }
+
+    .rcr-claims {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; margin: 1.5rem 0;
+    }
+    .rcr-claim {
+      border-top: 2px solid var(--navy); padding-top: 1rem;
+    }
+    .rcr-claim-n {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.18em;
+      color: var(--text-light); text-transform: uppercase;
+      display: block; margin-bottom: 0.4rem;
+    }
+    .rcr-claim h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.97rem; font-weight: 600;
+      margin-bottom: 0.4rem; color: var(--navy); line-height: 1.3;
+    }
+    .rcr-claim p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
+
+    .rcr-synthesis {
+      background: var(--navy); color: var(--white);
+      padding: 2.5rem 2rem; margin-top: 2rem; border-radius: 4px;
+    }
+    .rcr-synthesis .rcr-eyebrow { color: var(--accent); margin-bottom: 0.8rem; }
+    .rcr-synthesis h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      font-weight: 600; line-height: 1.25;
+      color: var(--white); margin-bottom: 1.8rem; max-width: 600px;
+    }
+    .rcr-syn-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; margin-bottom: 2rem;
+    }
+    .rcr-syn-item { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 0.8rem; }
+    .rcr-syn-item h4 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem;
+    }
+    .rcr-syn-item p { font-size: 0.87rem; color: rgba(255,255,255,0.72); line-height: 1.6; }
+    .rcr-closing {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+      color: rgba(255,255,255,0.88); line-height: 1.65; max-width: 640px;
+      border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1.5rem;
+    }
+    .rcr-doc-footer {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-light);
+      text-align: center; padding: 1rem 0 0; margin-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    @media (max-width: 620px) {
+      .rcr-claims { grid-template-columns: 1fr; }
+      .rcr-syn-grid { grid-template-columns: 1fr; }
     }
 
     /* ── SIDEBAR ─────────────────────────────────── */
@@ -384,15 +516,13 @@
       font-family: 'Inter', sans-serif;
       font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
       text-transform: uppercase; color: var(--text-light);
-      margin-bottom: 0.9rem;
-      padding-bottom: 0.4rem; border-bottom: 1px solid var(--rule);
+      margin-bottom: 0.9rem; padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--rule);
     }
     .aside-list { list-style: none; }
     .aside-list li {
-      padding: 0.35rem 0;
-      font-size: 0.88rem; color: var(--text-mid);
-      border-bottom: 1px solid #eef2f8;
-      line-height: 1.5;
+      padding: 0.35rem 0; font-size: 0.88rem; color: var(--text-mid);
+      border-bottom: 1px solid #eef2f8; line-height: 1.5;
     }
     .aside-list li:last-child { border-bottom: none; }
     .aside-list .year {
@@ -405,7 +535,6 @@
       font-style: normal; font-size: 0.78rem; color: #8a9ab8;
       display: block; margin-top: 0.1rem;
     }
-
     .contact-block a {
       display: block; font-size: 0.88rem; color: var(--text-mid);
       text-decoration: none; padding: 0.3rem 0;
@@ -439,8 +568,7 @@
       .nav-links.open {
         display: flex; position: absolute; top: 58px; left: 0; right: 0;
         background: var(--navy); padding: 1rem 2rem;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-        gap: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.08); gap: 0;
       }
       .nav-links.open a { padding: 0.65rem 0; }
       .hamburger { display: flex; }
@@ -456,9 +584,10 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#profile">Profile</a></li>
       <li><a href="#interests">Research</a></li>
-      <li><a href="#clear">CLEAR</a></li>
+      <li><a href="#clear">CLEARaudit</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#positions">Positions</a></li>
+      <li><a href="#collaborators">Collaborators</a></li>
       <li><a href="#ai-strategy" id="strategyNavLink" class="locked">AI Strategy</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -535,16 +664,15 @@
       <li>
         <div class="int-dot highlight"></div>
         <div>
-          <div class="int-title">The CLEAR Programme — multicentre LLM audit of radiology</div>
+          <div class="int-title">CLEARaudit — LLM-based radiology audit at scale</div>
           <div class="int-desc">
-            CLEAR is a multi-institution programme to develop, validate, and deploy large
-            language model pipelines for systematic audit of NHS radiology report corpora
-            at scale. As clinical lead, I have assembled a network of imaging departments
-            and established the governance infrastructure for multicentre data sharing,
-            in partnership with 33n's trusted research environment. The programme's
-            three workstreams address CTPA yield, CT brain follow-up recommendation rates,
-            and the detection of unwarranted variation. The objective is multicentre
-            validation and publication.
+            CLEARaudit is the radiology audit workstream delivered through the
+            National CLEAR Programme and its partner 33n. As clinical lead,
+            I have assembled a network of NHS imaging departments and established
+            the governance infrastructure for multicentre data sharing and analysis.
+            The programme's three workstreams address CTPA yield, CT brain
+            follow-up recommendation rates, and the detection of unwarranted
+            variation across imaging networks.
           </div>
           <a href="#clear" class="int-more">Full programme description ↓</a>
         </div>
@@ -594,11 +722,11 @@
         <div>
           <div class="int-title">Teaching case harvesting — Auto-TeaCH</div>
           <div class="int-desc">
-            Co-developer (with Roger Marlow) of Auto-TeaCH,
+            Co-developer (with Roger Marlow) of
+            <a href="https://autoteach.test.33n.co.uk/" target="_blank" rel="noopener">Auto-TeaCH</a>,
             an application that catalogues radiology reports at scale to find and aggregate
             teaching material within hospital systems. Several radiology academies are
             evaluating the software.
-            See <a href="https://autoteach.test.33n.co.uk/" target="_blank" rel="noopener">autoteach.test.33n.co.uk</a>.
           </div>
         </div>
       </li>
@@ -623,9 +751,9 @@
             With Roger Marlow I co-founded
             <a href="https://www.digitalelf.org" target="_blank" rel="noopener">The DigitalElf Project</a>,
             which documents how clinicians can engage productively with digital medicine
-            using open-source tools and code generation. Separately, exploring the
+            using open-source tools and code generation. Separately, exploring
             <a href="https://www.detectedx.com/" target="_blank" rel="noopener">DetectedX</a>
-            platform and generative AI for trainee education in the West Midlands Imaging Academy.
+            for trainee education in the West Midlands Imaging Academy.
           </div>
         </div>
       </li>
@@ -633,70 +761,70 @@
     </ul>
   </section>
 
-  <!-- CLEAR PROGRAMME -->
+  <!-- CLEARAUDIT -->
   <section class="section" id="clear">
-    <div id="clear">
-      <div class="clear-label">Programme Description</div>
-      <h2>The CLEAR Programme</h2>
-      <div class="clear-body">
-        <p>
-          CLEAR is a multicentre, multi-institution initiative to develop and validate
-          large language model pipelines for the systematic audit of NHS radiology report
-          corpora at scale. I am clinical lead for the programme, having led the advocacy
-          for multicentre collaboration and the national meeting that brought together
-          imaging network partners. The programme operates through a trusted research
-          environment provided by <a href="https://www.33n.co.uk/" target="_blank" rel="noopener">33n</a>,
-          which enables the compliant processing of identifiable health data across
-          participating institutions.
-        </p>
-        <p>
-          The central hypothesis is that LLM-based audit, applied at scale across a network
-          of NHS departments, can identify variation in radiological practice that escapes
-          conventional point-in-time audit. Structured feedback to departments is expected
-          to reduce unwarranted variation, improve reporting standardisation, and in the
-          case of CTPA and CT brain, reduce unnecessary downstream imaging and its
-          associated cost and radiation burden.
-        </p>
-        <p>
-          The three workstreams of the programme are:
-        </p>
-        <div class="clear-workstreams">
-          <div class="clear-ws">
-            <div class="ws-num">1</div>
-            <div>
-              <div class="ws-title">CT pulmonary angiography yield</div>
-              <div class="ws-desc">LLM classification of CTPA reports at scale to measure
-              positivity rates, identify departments with outlying yield, and examine the
-              relationship between clinical indication quality and diagnostic output.</div>
-            </div>
-          </div>
-          <div class="clear-ws">
-            <div class="ws-num">2</div>
-            <div>
-              <div class="ws-title">CT brain follow-up recommendation rates</div>
-              <div class="ws-desc">Automated extraction and analysis of follow-up recommendations
-              from acute CT brain reports to quantify recommendation burden, identify
-              variation across reporters and departments, and support efforts to reduce
-              low-value imaging.</div>
-            </div>
-          </div>
-          <div class="clear-ws">
-            <div class="ws-num">3</div>
-            <div>
-              <div class="ws-title">Detection of unwarranted variation across imaging networks</div>
-              <div class="ws-desc">Cross-institutional comparison of reporting patterns and
-              clinical language using LLM embeddings and classification, with the aim of
-              identifying systematic differences in practice that cannot be attributed to
-              case mix.</div>
-            </div>
+    <div class="clearaudit-wrap">
+      <div class="section-sublabel">Delivered through the National CLEAR Programme &amp; 33n</div>
+      <h2>CLEARaudit</h2>
+      <p>
+        CLEARaudit is the radiology audit workstream of the National CLEAR Programme —
+        Clinically-Led workforcE and Activity Redesign — a broader NHS initiative
+        addressing workforce planning and service redesign across clinical specialties.
+        I lead the radiology data science
+        within CLEARaudit, having led the advocacy for multicentre collaboration and the
+        national meeting that convened imaging network partners. The work is conducted
+        within a trusted research environment operated by
+        <a href="https://www.33n.co.uk/" target="_blank" rel="noopener">33n</a>,
+        enabling compliant processing of identifiable NHS data across participating trusts.
+      </p>
+      <p>
+        The central hypothesis is that LLM-based audit, applied at scale across a network
+        of NHS departments, can identify variation in radiological practice that escapes
+        conventional point-in-time audit. Structured feedback to departments is expected
+        to reduce unwarranted variation, improve reporting standardisation, and — in
+        the case of CTPA and CT brain — reduce unnecessary downstream imaging and its
+        associated cost and radiation burden.
+      </p>
+      <div class="workstream-list">
+        <div class="ws-item">
+          <div class="ws-num">1</div>
+          <div>
+            <div class="ws-title">Midlands ED in CT</div>
+            <div class="ws-desc">Investigating yield and levers for pathway change in CTPA
+            and CT abdomen and pelvis examinations for acute patients across 15 Midlands
+            trusts. The dataset spans more than half a million reports between 2018 and
+            2024, enabling LLM-based classification of diagnostic yield, indication quality,
+            and inter-institutional variation at a scale not previously achievable.</div>
           </div>
         </div>
-        <p>
-          The immediate objective is multicentre validation of pipelines developed in
-          the single-centre NHSE-funded phase. Three posters from the single-centre work
-          were presented at the European Congress of Radiology 2025.
-        </p>
+        <div class="ws-item">
+          <div class="ws-num">2</div>
+          <div>
+            <div class="ws-title">National CTC Quality Audit</div>
+            <div class="ws-desc">Eight centres of excellence are submitting CT colonography
+            report data for LLM-based evaluation of polyp detection rates, examination
+            quality, and reporting standards — providing a national benchmark for service
+            evaluation and improvement in a technically demanding and relatively low-volume
+            modality.</div>
+          </div>
+        </div>
+        <div class="ws-item">
+          <div class="ws-num">3</div>
+          <div>
+            <div class="ws-title">National Demand Optimisation</div>
+            <div class="ws-desc">NHSE has commissioned an evaluation of four high-demand,
+            often low-yield examination types: CT brain, CT abdomen and pelvis, MRI lumbar
+            spine, and transvaginal ultrasound. The workstream uses LLM audit to identify
+            unwarranted variation in referral patterns and reporting outcomes, and to define
+            optimisation opportunities at system level.</div>
+          </div>
+        </div>
       </div>
+      <p>
+        Single-centre work from the NHSE-funded phase was presented in three posters at
+        the European Congress of Radiology 2025. Multicentre expansion is the current
+        phase of the programme.
+      </p>
     </div>
   </section>
 
@@ -706,19 +834,16 @@
 
     <div class="pub-group">
       <div class="pub-group-label">Journal articles &amp; preprints — 2020 onwards</div>
-
       <div class="pub-entry">
         Zhang Z, Ai W, Wells K, <span class="pub-me">Rosewarne D</span>, Do T-T, Carneiro G.
         Learning to Complement and to Defer to Multiple Users.
         <em>European Conference on Computer Vision</em> 2024; pp 144–162. Springer.
       </div>
-
       <div class="pub-entry">
         Masroor M, Hassan T, Tian Y, Wells K, <span class="pub-me">Rosewarne D</span>, Do T-T, Carneiro G.
         Fair Distillation: Teaching Fairness from Biased Teachers in Medical Imaging.
         <em>arXiv preprint</em> arXiv:2411.11939, 2024.
       </div>
-
       <div class="pub-entry">
         Stogiannos N, Gillan C, Precht H, Sá Dos Reis C, Kumar A, O'Regan T, …,
         <span class="pub-me">Rosewarne D</span>, et al.
@@ -726,22 +851,17 @@
         imaging and radiotherapy.
         <em>Journal of Medical Imaging and Radiation Sciences</em> 2024; 55(4):101717.
       </div>
-
       <div class="pub-entry">
         Shelmerdine SC, Pauling C, Allan E, Langan D, Ashworth E, Yung K-W, …,
         <span class="pub-me">Rosewarne D</span>, Woznitza N, et al.
-        Artificial intelligence (AI) for paediatric fracture detection: a multireader
-        multicase (MRMC) study protocol.
+        Artificial intelligence for paediatric fracture detection: a multireader multicase study protocol.
         <em>BMJ Open</em> 2024; 14(12):e084448.
       </div>
-
       <div class="pub-entry">
         <span class="pub-me">Rosewarne DM</span>, Marlow RD.
-        An elf service for the NHS: individual doctors can lead digital transformation
-        from the bottom up.
+        An elf service for the NHS: individual doctors can lead digital transformation from the bottom up.
         <em>BMJ</em> 2023; 383.
       </div>
-
       <div class="pub-entry">
         Fahim A, <span class="pub-me">Rosewarne D</span>.
         Tissue sampling in suspected sarcoidosis: can we avoid mediastinal procedures?
@@ -751,7 +871,6 @@
 
     <div class="pub-group">
       <div class="pub-group-label">Conference presentations — ECR 2025</div>
-
       <div class="pub-entry">
         <span class="pub-me">Rosewarne D</span>.
         <a href="https://dx.doi.org/10.26044/ecr2025/C-24712" target="_blank" rel="noopener">
@@ -759,14 +878,12 @@
           brain studies at a large district general hospital.</a>
         <em>European Congress of Radiology</em>, Vienna, 2025.
       </div>
-
       <div class="pub-entry">
         <span class="pub-me">Rosewarne D</span>.
         <a href="https://dx.doi.org/10.26044/ecr2025/C-17408" target="_blank" rel="noopener">
           LLM evaluation of CTPA yield at scale.</a>
         <em>European Congress of Radiology</em>, Vienna, 2025.
       </div>
-
       <div class="pub-entry">
         <span class="pub-me">Rosewarne D</span>.
         <a href="https://dx.doi.org/10.26044/ecr2025/C-17526" target="_blank" rel="noopener">
@@ -777,33 +894,27 @@
 
     <div class="pub-group">
       <div class="pub-group-label">Earlier articles &amp; book chapters</div>
-
       <div class="pub-entry">
         <span class="pub-me">Rosewarne DM</span>.
         Intravascular contrast media.
         In: <em>Chapman &amp; Nakielny's Guide to Radiological Procedures</em>, 6th ed. Elsevier, 2017.
       </div>
-
       <div class="pub-entry">
-        Morgan AJ, <span class="pub-me">Rosewarne D</span>, Bapusamy A, Tanner K, Hancock J,
-        Reid D, Mathews S.
+        Morgan AJ, <span class="pub-me">Rosewarne D</span>, Bapusamy A, Tanner K, Hancock J, Reid D, Mathews S.
         Application of the recent BTS guidelines to a population of nodule patients.
         <em>Thorax</em> 2016; 71(Suppl 3):A95.
         [<a href="https://thorax.bmj.com/content/71/Suppl_3/A95.1" target="_blank" rel="noopener">link</a>]
       </div>
-
       <div class="pub-entry">
         Aktuerk D, Lutz M, <span class="pub-me">Rosewarne D</span>, Luckraz H.
         Cheerios in the lung: a rare but characteristic radiographic sign.
         <em>QJM</em> 2015; 108(9):743–744.
       </div>
-
       <div class="pub-entry">
         Holloway BJ, <span class="pub-me">Rosewarne D</span>, Jones RG.
         Imaging of thoracic aortic disease.
         <em>British Journal of Radiology</em> 2011; 84(Suppl 3):S338–S354.
       </div>
-
       <div class="pub-entry">
         <span class="pub-me">Rosewarne D</span>, Reynolds JH, Trotter SE, Burge PS.
         The idiopathic interstitial pneumonias — a survival guide.
@@ -813,13 +924,11 @@
 
     <div class="pub-group">
       <div class="pub-group-label">Physics — doctoral and early career</div>
-
       <div class="pub-entry">
         <span class="pub-me">Rosewarne D</span>, Sarkar S.
         Rigorous theory of photon localizability.
         <em>Quantum Optics</em> 1992; 4(6):405.
       </div>
-
       <div class="pub-entry">
         <span class="pub-me">Rosewarne DM</span>.
         Ground-state quantum fluctuations in a scalar Hopfield dielectric.
@@ -831,7 +940,6 @@
   <!-- POSITIONS -->
   <section class="section" id="positions">
     <h2>Positions Held</h2>
-
     <div class="pos-entry">
       <div class="pos-header">
         <h3>Consultant Radiologist</h3>
@@ -840,7 +948,6 @@
       <div class="pos-org">New Cross Hospital, Wolverhampton</div>
       <p class="pos-desc">General radiology service (CT, MRI, ultrasound, fluoroscopy, plain film), including image-guided biopsy and drainage, acute emergency rota, and subspecialty work in chest imaging, head and neck, and cardiac CT. Clinical tutor to radiology trainees 2014–2022; FRCR Part 1 Physics Examiner 2017–2022.</p>
     </div>
-
     <div class="pos-entry">
       <div class="pos-header">
         <h3>Visiting Researcher</h3>
@@ -849,16 +956,14 @@
       <div class="pos-org">Centre for Vision, Speech and Signal Processing, University of Surrey</div>
       <p class="pos-desc">Member of Professor Gustavo Carneiro's group, contributing to the PecMan project on human-AI cooperation and algorithmic fairness in mammogram interpretation.</p>
     </div>
-
     <div class="pos-entry">
       <div class="pos-header">
         <h3>Member, iReferCDS Committee</h3>
         <span class="pos-period">2024 – 2025</span>
       </div>
       <div class="pos-org">Royal College of Radiologists</div>
-      <p class="pos-desc">Provided data science input to the RCR on the ongoing implementation of the iRefer Clinical Decision Support tool.</p>
+      <p class="pos-desc">Evaluated the feasibility and governance of building a conversational chat interface to the iRefer clinical decision support guidelines, enabling clinicians to interrogate referral recommendations through natural language rather than structured browse. The project examined the technical, clinical safety, and information governance requirements for such a tool within an RCR context.</p>
     </div>
-
     <div class="pos-entry">
       <div class="pos-header">
         <h3>Radiology Lead, West Midlands Clinical Research Network</h3>
@@ -867,7 +972,6 @@
       <div class="pos-org">NIHR / NHS England</div>
       <p class="pos-desc">NIHR-funded role supporting radiology research in the West Midlands, with a personal focus on natural language processing of radiology reports for clinical audit at scale.</p>
     </div>
-
     <div class="pos-entry">
       <div class="pos-header">
         <h3>Topol Fellow</h3>
@@ -876,7 +980,6 @@
       <div class="pos-org">Health Education England / NHS England</div>
       <p class="pos-desc">Fellowship in digital transformation in health. Project work centred on the installation and clinical evaluation of AI-assisted chest radiograph reporting.</p>
     </div>
-
     <div class="pos-entry">
       <div class="pos-header">
         <h3>Analyst</h3>
@@ -885,6 +988,58 @@
       <div class="pos-org">Logica Defence and Civil Government</div>
       <p class="pos-desc">Machine vision and signal processing, using analysis and programming, on projects contracted by UK Government departments.</p>
     </div>
+  </section>
+
+  <!-- COLLABORATORS -->
+  <section class="section" id="collaborators">
+    <h2>Collaborators</h2>
+
+    <div class="collab-entry">
+      <div class="collab-header">
+        <span class="collab-name">The National CLEAR Programme &amp; 33n</span>
+        <span class="collab-role">CLEARaudit — Clinical Lead</span>
+      </div>
+      <a href="https://www.33n.co.uk/" target="_blank" rel="noopener" class="collab-link">33n.co.uk</a>
+      <p class="collab-desc">
+        The National CLEAR Programme (Clinically-Led workforcE and Activity Redesign) is a
+        national NHS initiative addressing workforce planning and service redesign across
+        clinical specialties, of which CLEARaudit is the radiology audit workstream. The programme
+        operates through 33n's trusted research environment, which provides ISO-27001 compliant
+        infrastructure for multicentre processing of NHS data. I lead the radiology data science
+        within CLEARaudit and led the national convening of imaging network partners.
+      </p>
+    </div>
+
+    <div class="collab-entry">
+      <div class="collab-header">
+        <span class="collab-name">DetectedX</span>
+        <span class="collab-role">Digital Education</span>
+      </div>
+      <a href="https://www.detectedx.com/" target="_blank" rel="noopener" class="collab-link">detectedx.com</a>
+      <p class="collab-desc">
+        DetectedX is a platform for AI-assisted radiology education and perception training,
+        used internationally for case-based learning and performance benchmarking. I am
+        exploring its application within the West Midlands Imaging Academy, alongside
+        the use of generative AI to curate training material and support trainee portfolio
+        development.
+      </p>
+    </div>
+
+    <div class="collab-entry">
+      <div class="collab-header">
+        <span class="collab-name">Centre for Vision, Speech and Signal Processing, University of Surrey</span>
+        <span class="collab-role">Visiting Researcher</span>
+      </div>
+      <a href="https://www.surrey.ac.uk/centre-vision-speech-signal-processing" target="_blank" rel="noopener" class="collab-link">surrey.ac.uk / CVSSP</a>
+      <p class="collab-desc">
+        I work with Professor Gustavo Carneiro's group on the PecMan project, which
+        investigates the optimisation of human-AI complementarity and algorithmic fairness
+        in mammogram interpretation. My role is to interface machine learning research
+        with clinical practice and contribute to the translation of findings into
+        radiologically meaningful outcomes.
+      </p>
+    </div>
+
   </section>
 
   <!-- AI STRATEGY -->
@@ -904,233 +1059,185 @@
       <div class="pw-error" id="pwError">Incorrect password.</div>
     </div>
 
-    <!-- Strategy content -->
-    <div class="strategy-content" id="strategyContent">
+    <!-- Strategy document — re-styled from rcr-ai-case.html -->
+    <div class="strategy-content rcr-doc" id="strategyContent">
 
-      <div class="strat-meta">
-        <p><strong>Radiology AI Strategy — New Cross Hospital / Royal Wolverhampton NHS Trust</strong></p>
-        <p>Dr David Rosewarne, Consultant Radiologist &amp; Digital Lead &nbsp;&middot;&nbsp; 2025–2028</p>
-        <p>Prepared for the RCR AI Strategy Meeting. Restricted circulation.</p>
+      <div class="rcr-header">
+        <span class="rcr-eyebrow">Royal College of Radiologists &middot; AI Strategy</span>
+        <h3>Two Parallel Revolutions<br>in Radiology <em>AI</em></h3>
+        <p class="rcr-header-sub">The case for LLMs in governance &amp; education &nbsp;&middot;&nbsp; The radiologist as programmer</p>
       </div>
 
-      <div class="strat-section">
-        <h3>1. Context and Rationale</h3>
-        <p>
-          Radiology is among the clinical specialties most immediately affected by the deployment
-          of large-scale AI. The department at New Cross Hospital serves a population of
-          approximately 320,000 and handles over 300,000 imaging examinations annually.
-          Against a background of sustained reporting demand growth and constrained consultant
-          numbers, AI presents both an operational necessity and a strategic opportunity.
-        </p>
-        <p>
-          This strategy describes the department's current AI programme, its three-year
-          objectives, and the governance framework required to deploy AI safely, evaluate it
-          rigorously, and contribute to the evidence base through publication and multicentre
-          collaboration. It does not treat AI as a procurement exercise. The department's
-          approach is grounded in scientific evaluation, data-driven audit, and the
-          principle that clinical AI deployment without robust outcome measurement is
-          professionally indefensible.
-        </p>
-        <div class="strat-callout">
-          <p>"The question is not whether AI will change radiology practice, but whether
-          radiologists will be in a position to evaluate, govern, and improve those changes —
-          or merely receive them."</p>
+      <div class="rcr-thesis">
+        <p>The decade-defining opportunity in radiology AI is not better image perception alone. It is the emergence of two parallel streams — one that gives radiology a nervous system for learning and accountability, and one that gives every radiologist the power to build.</p>
+      </div>
+
+      <!-- Stream One -->
+      <div class="rcr-stream">
+        <div class="rcr-stream-header">
+          <div class="rcr-stream-number">01</div>
+          <div class="rcr-stream-title-block">
+            <span class="rcr-stream-label">The governance &amp; education stream</span>
+            <div class="rcr-stream-title">LLMs as the Connective Tissue of a Learning Radiology System</div>
+          </div>
+        </div>
+
+        <div class="rcr-body">
+          <p>Radiology has accumulated an extraordinary and almost entirely unmined asset: decades of free-text reports, sitting in RIS systems across every trust in the country. These reports encode clinical reasoning, diagnostic thresholds, uncertainty, recommendation behaviour, and communication quality — at scale, across time, across institutions.</p>
+          <p>Large language models can read this archive. That sentence should be understood as a structural claim, not a technical one. It means that, for the first time, <strong>the output of radiology as a discipline is legible to a system capable of measuring it.</strong></p>
+        </div>
+
+        <div class="rcr-pull">
+          <p>No specialty can improve systematically without a feedback architecture connecting its output to institutional performance. Radiology has almost none. LLMs are the plausible mechanism for building it — using data that already exists, deployable now, without PACS integration or imaging data governance barriers.</p>
+        </div>
+
+        <div class="rcr-arg-grid">
+          <div class="rcr-arg-card">
+            <span class="rcr-arg-icon">01 · yield</span>
+            <h4>Measuring What Radiology Actually Produces</h4>
+            <p>LLMs can classify whether reports meet structured quality standards, whether conclusions are unambiguous, whether PE is confirmed or excluded, whether incidental findings are appropriately escalated. This is yield measurement at population scale — currently impossible without them.</p>
+          </div>
+          <div class="rcr-arg-card">
+            <span class="rcr-arg-icon">02 · failure</span>
+            <h4>Classifying Failure Modes, Not Just Errors</h4>
+            <p>When AI and radiologist disagree, the interesting question is not "who was right?" but "what does the disagreement reveal about report quality?" LLM-based classification reframes AI validation as a probe of communication standards. This inverts the usual defensiveness around AI performance.</p>
+          </div>
+          <div class="rcr-arg-card">
+            <span class="rcr-arg-icon">03 · governance</span>
+            <h4>Institutional Intelligence at Multi-Trust Scale</h4>
+            <p>Recommendation drift, incidental finding rates, report ambiguity trends, outlier reporter behaviour — these are governable phenomena. They are currently invisible. LLMs across a regional network produce the intelligence layer that clinical directors and regulators need but do not have.</p>
+          </div>
+          <div class="rcr-arg-card">
+            <span class="rcr-arg-icon">04 · education</span>
+            <h4>Adaptive, Evidence-Based Radiology Education</h4>
+            <p>LLMs can generate case-based teaching from real report corpora, identify where trainee language diverges from consultant norms, and produce targeted feedback at individual and cohort level. Education grounded in actual institutional performance data — not curated textbook cases.</p>
+          </div>
+          <div class="rcr-arg-card">
+            <span class="rcr-arg-icon">05 · audit</span>
+            <h4>Closing the Loop That Has Never Been Closed</h4>
+            <p>Correlating radiological conclusions with downstream coding, outcome data, and MDT decisions is now within reach. LLMs handle the heterogeneous text at every node of this loop. The result is the first genuine audit infrastructure radiology has had.</p>
+          </div>
+          <div class="rcr-arg-card">
+            <span class="rcr-arg-icon">06 · scale</span>
+            <h4>The Data Advantage Is Already There</h4>
+            <p>Every NHS trust has the raw material. No new data collection, no prospective study design, no imaging data governance hurdles. The barrier to entry is low; the yield is high; the timeline is now, not in five years.</p>
+          </div>
+        </div>
+
+        <div class="rcr-body">
+          <p>The CLEARaudit workstream of the National CLEAR Programme (Clinically-Led workforcE and Activity Redesign) is an operational proof of this thesis. Across three workstreams — half a million acute CT reports from 15 Midlands trusts, a national CT colonography quality audit across 8 centres of excellence, and an NHSE-commissioned evaluation of four high-demand examination types — it produces structured governance intelligence from unstructured report text at a scale that no conventional audit process could match.</p>
+          <p><strong>This is what a learning radiology system looks like.</strong> It does not require waiting for multimodal AI to mature, for PACS integration to be solved, or for regulatory frameworks to catch up with imaging AI. It requires taking seriously the information that radiologists have already produced.</p>
         </div>
       </div>
 
-      <div class="strat-section">
-        <h3>2. Current Digital Programme</h3>
-        <p>The department is currently running or contributing to the following AI and digital initiatives:</p>
-        <ul>
-          <li><strong>Clinical AI triage (harrison.ai):</strong> Implementation underway for lung cancer
-          pathway triage and acute CT brain prioritisation. Expected to reduce time-to-report
-          for urgent findings and support capacity management.</li>
-          <li><strong>CLEAR Programme:</strong> Multicentre LLM audit programme (clinical lead: Rosewarne).
-          Three NHSE-sponsored workstreams auditing CTPA yield, CT brain recommendation rates,
-          and unwarranted variation at scale. Partnership with 33n for trusted multicentre
-          data processing.</li>
-          <li><strong>Auto-TeaCH:</strong> NLP application for harvesting teaching cases from
-          departmental report archives. Deployed via 33n infrastructure. In evaluation at
-          multiple radiology academies.</li>
-          <li><strong>REALM:</strong> LLM-based error detection pipeline for acute radiology,
-          supporting departmental quality improvement and targeted educational feedback.</li>
-          <li><strong>Lung cancer screening (TLHC):</strong> Reporting low-dose CT since
-          May 2025 with automated audit infrastructure developed for the forthcoming
-          Wolverhampton population screening launch.</li>
-          <li><strong>PecMan (University of Surrey):</strong> Contributing to research on
-          human-AI cooperation and algorithmic fairness in mammogram interpretation.</li>
-        </ul>
+      <!-- Stream Two -->
+      <div class="rcr-stream">
+        <div class="rcr-stream-header">
+          <div class="rcr-stream-number">02</div>
+          <div class="rcr-stream-title-block">
+            <span class="rcr-stream-label">The implementation stream</span>
+            <div class="rcr-stream-title">The Radiologist as Programmer: AI Tooling as Professional Emancipation</div>
+          </div>
+        </div>
+
+        <div class="rcr-body">
+          <p>There is a second transformation underway that receives almost no attention in radiology AI discourse, because it is happening to individuals rather than to systems. It concerns what happens when a clinician with deep domain knowledge can, for the first time, <strong>express that knowledge directly in code</strong> — without a software engineering intermediary.</p>
+          <p>AI coding assistants have collapsed the barrier between clinical insight and computational implementation. A radiologist who understands the nuance of PE reporting, the subtlety of nodule follow-up pathways, or the patterns of recommendation drift — but who previously had no route from that understanding to a working analytical tool — now has one. The translation layer has been removed.</p>
+        </div>
+
+        <div class="rcr-code">
+          <div class="rcr-code-header">
+            <div class="rcr-dot rcr-dot-r"></div>
+            <div class="rcr-dot rcr-dot-y"></div>
+            <div class="rcr-dot rcr-dot-g"></div>
+            <span class="rcr-code-label">ctpa_classifier.py &middot; radiologist-authored</span>
+          </div>
+          <div class="rcr-code-body"><pre><span class="c-comment"># A radiologist wrote this. No software engineer required.</span>
+<span class="c-comment"># Domain knowledge expressed directly as executable logic.</span>
+
+<span class="c-keyword">def</span> <span class="c-fn">classify_pe_conclusion</span>(<span class="c-var">report_text</span>: <span class="c-keyword">str</span>) -> <span class="c-var">PEClassification</span>:
+    <span class="c-string">"""
+    Classify CTPA report against structured PE yield taxonomy.
+    Categories reflect clinical reality, not algorithmic convenience:
+    - CONFIRMED_CENTRAL / CONFIRMED_SEGMENTAL / CONFIRMED_SUBSEGMENTAL
+    - NEGATIVE_EXPLICIT / NEGATIVE_IMPLICIT
+    - INDETERMINATE (technically limited, clinical correlation required)
+    - INCIDENTAL_FINDING_DOMINANT
+    """</span>
+
+    prompt = <span class="c-fn">build_classification_prompt</span>(
+        report=<span class="c-var">report_text</span>,
+        taxonomy=<span class="c-var">PE_TAXONOMY</span>,
+        quality_flags=<span class="c-var">REPORT_QUALITY_RUBRIC</span>,
+        few_shot_examples=<span class="c-var">VALIDATED_EXAMPLES</span>
+    )
+
+    <span class="c-keyword">return</span> <span class="c-fn">llm_classify</span>(<span class="c-var">prompt</span>, model=<span class="c-string">"claude-sonnet"</span>)
+
+<span class="c-comment"># This taxonomy was designed by someone who has read 10,000 CTPA reports.</span>
+<span class="c-comment"># That expertise is now encoded, reproducible, and scalable.</span></pre>
+          </div>
+        </div>
+
+        <div class="rcr-body">
+          <p>This is not about radiologists becoming software engineers. It is about the professional knowledge that resides in clinical experts — knowledge that has historically been locked in heads, expressed only in reports, and lost when those experts retire — becoming <strong>executable, auditable, and transferable.</strong></p>
+        </div>
+
+        <div class="rcr-claims">
+          <div class="rcr-claim">
+            <span class="rcr-claim-n">claim 01</span>
+            <h4>Domain Knowledge Becomes Infrastructure</h4>
+            <p>When a radiologist encodes their classification logic, reporting standards, or pathway criteria as code, that knowledge stops being personal and becomes institutional. It can be version-controlled, peer-reviewed, validated, and deployed at scale. This is a fundamentally new mode of knowledge transfer in medicine.</p>
+          </div>
+          <div class="rcr-claim">
+            <span class="rcr-claim-n">claim 02</span>
+            <h4>The Intermediary Problem Is Solved</h4>
+            <p>The traditional path from clinical insight to software tool passes through months of requirements gathering, developer interpretation, and iterative miscommunication. AI coding assistants make that path direct. A consultant radiologist can move from idea to working pipeline in an afternoon.</p>
+          </div>
+          <div class="rcr-claim">
+            <span class="rcr-claim-n">claim 03</span>
+            <h4>Bespoke Tools at NHS Scale</h4>
+            <p>Commercial AI products are built for the median use case. A radiologist who can build their own tools can address the specific clinical and governance problems of their department, their trust, their patient population. The long tail of clinical need — currently unserved by any vendor — becomes addressable.</p>
+          </div>
+          <div class="rcr-claim">
+            <span class="rcr-claim-n">claim 04</span>
+            <h4>A New Career Dimension for the Specialty</h4>
+            <p>Radiologists who develop computational fluency become architects of the systems that govern their specialty, not passive consumers of tools built elsewhere. This has implications for workforce planning, job satisfaction, research capacity, and the intellectual identity of radiology as a discipline.</p>
+          </div>
+        </div>
+
+        <div class="rcr-pull">
+          <p>The question is not whether radiologists should learn to code in the traditional sense. It is whether they should be able to express their clinical intelligence in a form that machines can execute. AI tooling has made the answer yes — and the implications are profound.</p>
+        </div>
       </div>
 
-      <div class="strat-section">
-        <h3>3. Strategic Objectives (2025–2028)</h3>
-        <p>The department's AI strategy is organised around four objectives:</p>
-        <ul>
-          <li><strong>Clinical safety and outcome improvement:</strong> Deploy AI tools with
-          measurable patient benefit — reduced time to diagnosis for urgent pathology,
-          improved sensitivity for lung cancer and pulmonary embolism, reduction in
-          low-value follow-up imaging.</li>
-          <li><strong>Operational efficiency and standardisation:</strong> Use LLM-based audit
-          to identify and reduce unwarranted variation in reporting practice, with the
-          CLEAR Programme providing the multicentre infrastructure for this work.</li>
-          <li><strong>Education and workforce development:</strong> Integrate AI-assisted
-          case selection (Auto-TeaCH, REALM) into trainee education, and build
-          departmental competency in evaluating AI tools critically.</li>
-          <li><strong>Research and publication:</strong> Contribute to the national evidence
-          base through multicentre studies, conference presentations, and peer-reviewed
-          publication.</li>
-        </ul>
+      <!-- Synthesis -->
+      <div class="rcr-synthesis">
+        <span class="rcr-eyebrow">Synthesis</span>
+        <h3>Two Streams, One Argument: Radiology Must Own Its Future</h3>
+        <div class="rcr-syn-grid">
+          <div class="rcr-syn-item">
+            <h4>Stream One gives us</h4>
+            <p>A feedback architecture between radiology output and institutional performance. Governance intelligence that does not currently exist. A learning system, not merely a reading service.</p>
+          </div>
+          <div class="rcr-syn-item">
+            <h4>Stream Two gives us</h4>
+            <p>Clinical experts who can build. Domain knowledge that becomes executable infrastructure. A specialty that authors its own tools rather than procuring them from vendors with misaligned incentives.</p>
+          </div>
+          <div class="rcr-syn-item">
+            <h4>Together they address</h4>
+            <p>The deepest failure of NHS radiology: that it generates vast knowledge, captures almost none of it systematically, and has no feedback architecture for improvement. These streams build that architecture.</p>
+          </div>
+          <div class="rcr-syn-item">
+            <h4>The RCR's role</h4>
+            <p>To recognise this as a professional agenda, not merely a technical one. To establish standards for LLM-based governance tools. To champion computational fluency as a legitimate and valued radiologist competency.</p>
+          </div>
+        </div>
+        <p class="rcr-closing">Image AI will make individual radiologists faster and safer. LLM-based governance and the radiologist-as-programmer will make radiology, as a system and as a profession, fundamentally different. Both matter. Only one of them is currently being planned for.</p>
       </div>
 
-      <div class="strat-section">
-        <h3>4. Governance Framework</h3>
-        <p>
-          All AI deployments in the department operate within a governance framework
-          covering clinical oversight, data management, and post-deployment evaluation.
-        </p>
-        <ul>
-          <li><strong>Data governance:</strong> Multicentre data processing for CLEAR and
-          related projects is conducted within the 33n Trusted Research Environment,
-          which provides ISO-27001 compliant infrastructure for the handling of
-          identifiable NHS data and satisfies the requirements of NHS DSPT and GDPR.</li>
-          <li><strong>Clinical oversight:</strong> AI outputs in clinical pathways are
-          reviewed by consultant radiologists. No AI system operates in an unsupervised
-          reporting capacity. All deployments include a defined escalation pathway.</li>
-          <li><strong>AI as a Medical Device (AIaMD):</strong> Commercial deployments
-          (harrison.ai, Annalise.ai) are UKCA-marked and evaluated against the MHRA's
-          Software and AI as a Medical Device guidance. In-house tools (CLEAR pipelines,
-          Auto-TeaCH, REALM) are classified as service improvement software and
-          evaluated under the department's clinical audit and QI governance.</li>
-          <li><strong>Fairness and bias:</strong> Work through the PecMan collaboration
-          at the University of Surrey is informing our approach to algorithmic fairness
-          evaluation in deployed AI systems, particularly with respect to demographic
-          subgroup performance.</li>
-        </ul>
-      </div>
-
-      <div class="strat-section">
-        <h3>5. Workforce and Culture</h3>
-        <p>
-          The department's approach to AI adoption is informed by the principle that
-          radiologists who understand the technical basis of AI tools are better placed
-          to evaluate, govern, and improve them than those who do not. This is the
-          core argument of The DigitalElf Project, which provides a model for
-          bottom-up clinician engagement with digital medicine.
-        </p>
-        <p>
-          Specific workforce development activities include:
-        </p>
-        <ul>
-          <li>Structured introduction to AI evaluation methods for all radiology trainees,
-          integrated into the departmental teaching programme.</li>
-          <li>Engagement with the West Midlands Imaging Academy on AI-assisted case
-          selection and portfolio summarisation tools.</li>
-          <li>Participation in the DetectedX platform for perception training and
-          AI-assisted case review.</li>
-          <li>Internal dissemination of CLEAR Programme methodology to build departmental
-          familiarity with LLM-based audit.</li>
-        </ul>
-      </div>
-
-      <div class="strat-section">
-        <h3>6. Implementation Roadmap</h3>
-        <table class="strat-table">
-          <thead>
-            <tr>
-              <th>Initiative</th>
-              <th>Phase</th>
-              <th>Timeline</th>
-              <th>Milestone</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>harrison.ai deployment</td>
-              <td>Implementation</td>
-              <td>2025</td>
-              <td>Live in lung cancer &amp; CT brain pathways</td>
-            </tr>
-            <tr>
-              <td>CLEAR — single-centre validation</td>
-              <td>Complete</td>
-              <td>2024–2025</td>
-              <td>3 ECR posters; NHSE reports submitted</td>
-            </tr>
-            <tr>
-              <td>CLEAR — multicentre expansion</td>
-              <td>Active</td>
-              <td>2025–2026</td>
-              <td>≥4 sites; 33n TRE operational</td>
-            </tr>
-            <tr>
-              <td>CLEAR — publication</td>
-              <td>Planned</td>
-              <td>2026</td>
-              <td>Submission to high-impact journal</td>
-            </tr>
-            <tr>
-              <td>Auto-TeaCH</td>
-              <td>Evaluation</td>
-              <td>2025–2026</td>
-              <td>Academy adoption; peer-reviewed publication</td>
-            </tr>
-            <tr>
-              <td>TLHC screening AI audit</td>
-              <td>Development</td>
-              <td>2025–2026</td>
-              <td>Automated audit live ahead of population launch</td>
-            </tr>
-            <tr>
-              <td>PecMan (Surrey)</td>
-              <td>Research</td>
-              <td>Ongoing</td>
-              <td>Conference submission 2025–2026</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="strat-section">
-        <h3>7. Risks and Mitigations</h3>
-        <table class="strat-table">
-          <thead>
-            <tr><th>Risk</th><th>Mitigation</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>AI tool underperforms in local population (case mix, scanner variation)</td>
-              <td>Prospective local validation before clinical integration; ongoing performance monitoring via CLEAR audit infrastructure</td>
-            </tr>
-            <tr>
-              <td>Over-reliance on AI outputs by junior staff</td>
-              <td>Defined supervision requirements; AI outputs labelled as decision support only; trainee education programme</td>
-            </tr>
-            <tr>
-              <td>Data governance failure in multicentre CLEAR work</td>
-              <td>33n TRE provides contractual and technical safeguards; DPIA completed for each workstream</td>
-            </tr>
-            <tr>
-              <td>Loss of clinical AI expertise if key individuals leave</td>
-              <td>DigitalElf model for distributed capability; documentation and open-source tooling reduces key-person dependency</td>
-            </tr>
-            <tr>
-              <td>Regulatory change (AIaMD classification)</td>
-              <td>Monitoring MHRA and NHSX guidance; legal advice sought for in-house tool classification</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="strat-section">
-        <h3>8. Success Metrics</h3>
-        <ul>
-          <li>Time to report for urgent CT brain and lung cancer pathway studies (before/after harrison.ai deployment)</li>
-          <li>CTPA positivity rate trend over time (CLEAR Workstream 1)</li>
-          <li>Proportion of CT brain reports with unwarranted follow-up recommendations (CLEAR Workstream 2)</li>
-          <li>Number of institutions contributing data to CLEAR multicentre analysis</li>
-          <li>Peer-reviewed publications arising from the digital programme</li>
-          <li>Trainee engagement metrics: Auto-TeaCH cases reviewed; portfolio AI-summarisation adoption</li>
-        </ul>
+      <div class="rcr-doc-footer">
+        National CLEAR Programme &nbsp;&middot;&nbsp; Royal Wolverhampton NHS Trust &nbsp;&middot;&nbsp; University of Surrey &nbsp;&middot;&nbsp; University of Sydney
       </div>
 
     </div><!-- /strategy-content -->
@@ -1140,34 +1247,28 @@
 
 <!-- SIDEBAR -->
 <aside>
-
   <div class="aside-block">
     <h4>Education</h4>
     <ul class="aside-list">
       <li>
-        <span class="year">2007</span>
-        FRCR
+        <span class="year">2007</span>FRCR
         <span class="inst">Royal College of Radiologists</span>
       </li>
       <li>
-        <span class="year">2003</span>
-        MRCP
+        <span class="year">2003</span>MRCP
         <span class="inst">Royal College of Physicians</span>
       </li>
       <li>
-        <span class="year">1999</span>
-        MB ChB with Honours
+        <span class="year">1999</span>MB ChB with Honours
         <span class="inst">University of Birmingham</span>
       </li>
       <li>
-        <span class="year">1992</span>
-        PhD, Physics
+        <span class="year">1992</span>PhD, Physics
         <span class="inst">University of London</span>
         <span class="thesis">"Photon Localisation in Spontaneous Parametric Downconversion"</span>
       </li>
       <li>
-        <span class="year">1987</span>
-        BA, Natural Sciences (Physics &amp; Theoretical Physics, Pt II)
+        <span class="year">1987</span>BA, Natural Sciences (Physics &amp; Theoretical Physics, Pt II)
         <span class="inst">University of Cambridge</span>
       </li>
     </ul>
@@ -1199,7 +1300,6 @@
       Auto-TeaCH
     </a>
   </div>
-
 </aside>
 </div><!-- /page -->
 
@@ -1224,12 +1324,11 @@
       sessionStorage.setItem('strategyUnlocked', '1');
     } else {
       document.getElementById('pwError').style.display = 'block';
-      input.value = '';
-      input.focus();
+      input.value = ''; input.focus();
     }
   }
 
-  // Restore unlocked state on page load
+  // Restore on reload
   if (sessionStorage.getItem('strategyUnlocked') === '1') {
     document.getElementById('strategyLock').style.display = 'none';
     document.getElementById('strategyContent').style.display = 'block';
