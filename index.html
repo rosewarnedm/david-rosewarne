@@ -1,1 +1,762 @@
-David Rosewarne
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr David Rosewarne — Consultant Radiologist</title>
+  <meta name="description" content="Dr David Rosewarne — Consultant Radiologist, New Cross Hospital. Research interests in clinical AI, NLP audit, and digital medicine." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:      #0d2144;
+      --navy-mid:  #163360;
+      --blue:      #1e4fa0;
+      --blue-mid:  #2563c8;
+      --blue-light:#4a80d4;
+      --accent:    #7aaee8;
+      --white:     #ffffff;
+      --off-white: #f7f9fc;
+      --rule:      #d1dff0;
+      --text:      #1a2535;
+      --text-mid:  #3d5068;
+      --text-light:#6b82a0;
+      --link:      #1e4fa0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    a { color: var(--link); }
+    a:hover { text-decoration-thickness: 2px; }
+
+    /* ── NAV ─────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--navy);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .nav-inner {
+      max-width: 1060px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 58px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 600;
+      color: var(--white); text-decoration: none; letter-spacing: 0.01em;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.62); text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--white); border-radius: 2px;
+    }
+
+    /* ── HEADER ──────────────────────────────────── */
+    #header {
+      background: var(--navy);
+      padding: 7rem 2rem 4.5rem;
+      border-bottom: 4px solid var(--blue-mid);
+    }
+    .header-inner {
+      max-width: 1060px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 3rem; align-items: end;
+    }
+    #header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 600; color: var(--white);
+      line-height: 1.15; margin-bottom: 0.6rem;
+    }
+    .header-quals {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em;
+      color: var(--accent); margin-bottom: 1.2rem;
+    }
+    .header-role {
+      font-size: 1.05rem; color: rgba(255,255,255,0.68);
+      font-weight: 300; line-height: 1.6;
+    }
+    .header-role strong { color: rgba(255,255,255,0.85); font-weight: 400; }
+    .header-links {
+      display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end;
+    }
+    .header-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem; color: var(--accent); text-decoration: none;
+      display: flex; align-items: center; gap: 0.4rem;
+      opacity: 0.85; transition: opacity 0.15s;
+    }
+    .header-link:hover { opacity: 1; }
+    .header-link svg {
+      width: 14px; height: 14px; stroke: currentColor; fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    /* ── MAIN LAYOUT ─────────────────────────────── */
+    .page {
+      max-width: 1060px; margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 270px;
+      gap: 4rem;
+      align-items: start;
+    }
+    main { padding: 3.5rem 0 4rem; }
+    aside { padding: 3.5rem 0 4rem; position: sticky; top: 74px; }
+
+    /* ── SECTION HEADINGS ────────────────────────── */
+    .section { margin-bottom: 3.5rem; }
+    .section:last-child { margin-bottom: 0; }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem; font-weight: 600;
+      color: var(--navy); margin-bottom: 1.2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--rule);
+    }
+    h3 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1rem; font-weight: 600;
+      color: var(--navy); margin-bottom: 0.2rem;
+    }
+
+    /* ── PROFILE ─────────────────────────────────── */
+    .profile p {
+      font-size: 1rem; color: var(--text-mid);
+      margin-bottom: 0.9rem; line-height: 1.8;
+    }
+    .profile p:last-child { margin-bottom: 0; }
+
+    /* ── RESEARCH INTERESTS ──────────────────────── */
+    .interests-list { list-style: none; padding: 0; }
+    .interests-list li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid; grid-template-columns: 8px 1fr; gap: 1rem;
+      align-items: start;
+    }
+    .interests-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .int-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--blue-mid); margin-top: 0.55rem; flex-shrink: 0;
+    }
+    .int-title {
+      font-weight: 600; font-size: 0.95rem; color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+    .int-desc {
+      font-size: 0.9rem; color: var(--text-mid); line-height: 1.65;
+    }
+    .int-desc a { color: var(--blue-mid); }
+
+    /* ── PUBLICATIONS ────────────────────────────── */
+    .pub-group { margin-bottom: 2.2rem; }
+    .pub-group-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-light);
+      margin-bottom: 0.9rem;
+    }
+    .pub-entry {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.93rem; line-height: 1.65;
+      color: var(--text-mid);
+    }
+    .pub-entry:last-child { border-bottom: none; }
+    .pub-entry a {
+      color: var(--link); text-decoration: underline;
+      text-underline-offset: 2px; text-decoration-thickness: 1px;
+    }
+    .pub-entry a:hover { text-decoration-thickness: 2px; }
+    .pub-me { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ── POSITIONS ───────────────────────────────── */
+    .pos-entry {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .pos-entry:last-child { border-bottom: none; }
+    .pos-header {
+      display: flex; justify-content: space-between;
+      align-items: baseline; gap: 1rem; flex-wrap: wrap;
+      margin-bottom: 0.2rem;
+    }
+    .pos-period {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem; font-weight: 500; color: var(--text-light);
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .pos-org {
+      font-size: 0.88rem; color: var(--blue-mid);
+      font-style: italic; margin-bottom: 0.3rem;
+    }
+    .pos-desc { font-size: 0.9rem; color: var(--text-mid); line-height: 1.65; }
+
+    /* ── SIDEBAR ─────────────────────────────────── */
+    .aside-block { margin-bottom: 2.5rem; }
+    .aside-block:last-child { margin-bottom: 0; }
+    .aside-block h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-light);
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.4rem; border-bottom: 1px solid var(--rule);
+    }
+    .aside-list { list-style: none; }
+    .aside-list li {
+      padding: 0.35rem 0;
+      font-size: 0.88rem; color: var(--text-mid);
+      border-bottom: 1px solid #eef2f8;
+      line-height: 1.5;
+    }
+    .aside-list li:last-child { border-bottom: none; }
+    .aside-list .year {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem; color: var(--text-light);
+      display: block; margin-bottom: 0.05rem;
+    }
+    .aside-list .inst { font-style: italic; font-size: 0.82rem; }
+    .aside-list .thesis {
+      font-style: normal; font-size: 0.78rem; color: #8a9ab8;
+      display: block; margin-top: 0.1rem;
+    }
+
+    .contact-block a {
+      display: block; font-size: 0.88rem; color: var(--text-mid);
+      text-decoration: none; padding: 0.3rem 0;
+      border-bottom: 1px solid #eef2f8;
+    }
+    .contact-block a:last-child { border-bottom: none; }
+    .contact-block a:hover { color: var(--blue-mid); }
+    .contact-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem; color: var(--text-light);
+      display: block; margin-bottom: 0.1rem;
+    }
+
+    .projects-aside a {
+      display: block; padding: 0.5rem 0;
+      border-bottom: 1px solid #eef2f8;
+      text-decoration: none;
+    }
+    .projects-aside a:last-child { border-bottom: none; }
+    .projects-aside .proj-name {
+      font-size: 0.9rem; font-weight: 600; color: var(--navy);
+      display: block; margin-bottom: 0.1rem;
+    }
+    .projects-aside .proj-desc {
+      font-size: 0.8rem; color: var(--text-mid); font-style: italic;
+    }
+    .projects-aside a:hover .proj-name { color: var(--blue-mid); }
+
+    /* ── FOOTER ──────────────────────────────────── */
+    footer {
+      background: var(--off-white); border-top: 1px solid var(--rule);
+      text-align: center; padding: 1.5rem 2rem;
+    }
+    footer p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem; color: var(--text-light);
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────── */
+    @media (max-width: 800px) {
+      .page { grid-template-columns: 1fr; gap: 0; }
+      aside { padding-top: 0; border-top: 2px solid var(--rule); position: static; }
+      .header-inner { grid-template-columns: 1fr; }
+      .header-links { align-items: flex-start; flex-direction: row; flex-wrap: wrap; gap: 1rem; }
+      .nav-links { display: none; flex-direction: column; }
+      .nav-links.open {
+        display: flex; position: absolute; top: 58px; left: 0; right: 0;
+        background: var(--navy); padding: 1rem 2rem;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        gap: 0;
+      }
+      .nav-links.open a { padding: 0.65rem 0; }
+      .hamburger { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Dr David Rosewarne</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#interests">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#positions">Positions</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="header-inner">
+    <div>
+      <h1>Dr David Rosewarne</h1>
+      <div class="header-quals">MA (Cantab) &nbsp;&middot;&nbsp; PhD &nbsp;&middot;&nbsp; MB ChB (Hons) &nbsp;&middot;&nbsp; MRCP &nbsp;&middot;&nbsp; FRCR</div>
+      <p class="header-role">
+        <strong>Consultant Radiologist</strong>, New Cross Hospital, Wolverhampton<br />
+        <strong>Visiting Researcher</strong>, Centre for Vision, Speech and Signal Processing, University of Surrey
+      </p>
+    </div>
+    <div class="header-links">
+      <a href="mailto:david.rosewarne@gmail.com" class="header-link">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        david.rosewarne@gmail.com
+      </a>
+      <a href="https://www.digitalelf.org" target="_blank" rel="noopener" class="header-link">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        digitalelf.org
+      </a>
+      <a href="https://autoteach.test.33n.co.uk/" target="_blank" rel="noopener" class="header-link">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Auto-TeaCH
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- BODY -->
+<div class="page">
+<main>
+
+  <!-- PROFILE -->
+  <section class="section profile" id="profile">
+    <h2>Profile</h2>
+    <p>
+      I am a consultant radiologist at New Cross Hospital, Wolverhampton, where I have worked
+      since 2009. My clinical practice covers the full general radiology service — CT, MRI,
+      ultrasound, fluoroscopy, and plain film reporting — with subspecialty interests in
+      chest imaging, head and neck, cardiac CT, and image-guided biopsy and drainage. I have
+      a particular interest in interstitial lung disease and, more recently, lung cancer
+      screening through the Targeted Lung Health Check programme.
+    </p>
+    <p>
+      My background is unusual for a radiologist. I read Natural Sciences at Cambridge, then
+      completed a PhD in quantum optics at the University of London, before working for two
+      years as an analyst at Logica on machine vision and signal processing projects for UK
+      Government departments. I subsequently retrained in medicine at Birmingham, qualifying
+      with honours in 1999.
+    </p>
+    <p>
+      Since 2020 I have developed a parallel strand of work in digital medicine, applying
+      natural language processing, large language models, and clinical AI to problems in
+      radiology audit, education, and service improvement. I held an NHS England Topol
+      Fellowship (2022–23) and was Radiology Lead for the West Midlands Clinical Research
+      Network (NIHR, 2022–24). I am a Visiting Researcher at the University of Surrey,
+      working on human-AI cooperation in breast imaging.
+    </p>
+  </section>
+
+  <!-- RESEARCH INTERESTS -->
+  <section class="section" id="interests">
+    <h2>Research &amp; Digital Interests</h2>
+    <ul class="interests-list">
+
+      <li>
+        <div class="int-dot"></div>
+        <div>
+          <div class="int-title">Clinical AI deployment and evaluation</div>
+          <div class="int-desc">
+            Leading a departmental project with
+            <a href="https://www.harrison.ai/" target="_blank" rel="noopener">harrison.ai</a>
+            to implement AI triage for the lung cancer pathway and acute CT brain reporting.
+            Previous work included installation and evaluation of Annalise.ai chest radiograph
+            models as part of the Topol Fellowship.
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="int-dot"></div>
+        <div>
+          <div class="int-title">NLP-driven audit of radiology reports at scale</div>
+          <div class="int-desc">
+            Running three NHSE-sponsored projects using large language models to audit
+            radiology report corpora — measuring recommendation rates, assessing CTPA yield,
+            and identifying unwarranted variation. This work is conducted through a trusted
+            research environment operated by
+            <a href="https://www.33n.co.uk/" target="_blank" rel="noopener">33n</a>,
+            enabling multicentre analysis across imaging networks.
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="int-dot"></div>
+        <div>
+          <div class="int-title">Human-AI cooperation in medical imaging (PecMan, University of Surrey)</div>
+          <div class="int-desc">
+            Visiting researcher at the Centre for Vision, Speech and Signal Processing
+            (Prof. Gustavo Carneiro's group). The PecMan project investigates the
+            optimisation of human-AI complementarity and algorithmic fairness in
+            mammogram interpretation.
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="int-dot"></div>
+        <div>
+          <div class="int-title">Error detection and quality improvement — REALM</div>
+          <div class="int-desc">
+            Using language models to identify cases suitable for error analysis in acute
+            radiology, producing targeted educational material and supporting departmental
+            quality improvement.
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="int-dot"></div>
+        <div>
+          <div class="int-title">Teaching case harvesting — Auto-TeaCH</div>
+          <div class="int-desc">
+            Co-developer (with Roger Marlow) of Auto-TeaCH, an application that catalogues
+            radiology reports at scale to find and aggregate teaching material within
+            hospital systems. Several radiology academies are evaluating the software.
+            See <a href="https://autoteach.test.33n.co.uk/" target="_blank" rel="noopener">autoteach.test.33n.co.uk</a>.
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="int-dot"></div>
+        <div>
+          <div class="int-title">Radiology sustainability</div>
+          <div class="int-desc">
+            Three posters at ECR 2025 (Planet Radiology session) examining
+            LLM-facilitated analysis of CT brain follow-up recommendation rates,
+            CTPA yield assessment at scale, and lossless PACS image compression.
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="int-dot"></div>
+        <div>
+          <div class="int-title">Digital education and the DigitalElf Project</div>
+          <div class="int-desc">
+            With Roger Marlow I co-founded
+            <a href="https://www.digitalelf.org" target="_blank" rel="noopener">The DigitalElf Project</a>,
+            which documents how clinicians can engage productively with digital medicine
+            using open-source tools and code generation. Separately, exploring the
+            <a href="https://www.detectedx.com/" target="_blank" rel="noopener">DetectedX</a>
+            platform and generative AI for trainee education in the West Midlands Imaging Academy.
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="section" id="publications">
+    <h2>Publications &amp; Presentations</h2>
+
+    <div class="pub-group">
+      <div class="pub-group-label">Journal articles &amp; preprints — 2020 onwards</div>
+
+      <div class="pub-entry">
+        Zhang Z, Ai W, Wells K, <span class="pub-me">Rosewarne D</span>, Do T-T, Carneiro G.
+        Learning to Complement and to Defer to Multiple Users.
+        <em>European Conference on Computer Vision</em> 2024; pp 144–162. Springer.
+      </div>
+
+      <div class="pub-entry">
+        Masroor M, Hassan T, Tian Y, Wells K, <span class="pub-me">Rosewarne D</span>, Do T-T, Carneiro G.
+        Fair Distillation: Teaching Fairness from Biased Teachers in Medical Imaging.
+        <em>arXiv preprint</em> arXiv:2411.11939, 2024.
+      </div>
+
+      <div class="pub-entry">
+        Stogiannos N, Gillan C, Precht H, Sá Dos Reis C, Kumar A, O'Regan T, …,
+        <span class="pub-me">Rosewarne D</span>, et al.
+        A multidisciplinary team and multiagency approach for AI implementation in medical
+        imaging and radiotherapy.
+        <em>Journal of Medical Imaging and Radiation Sciences</em> 2024; 55(4):101717.
+      </div>
+
+      <div class="pub-entry">
+        Shelmerdine SC, Pauling C, Allan E, Langan D, Ashworth E, Yung K-W, …,
+        <span class="pub-me">Rosewarne D</span>, Woznitza N, et al.
+        Artificial intelligence (AI) for paediatric fracture detection: a multireader
+        multicase (MRMC) study protocol.
+        <em>BMJ Open</em> 2024; 14(12):e084448.
+      </div>
+
+      <div class="pub-entry">
+        <span class="pub-me">Rosewarne DM</span>, Marlow RD.
+        An elf service for the NHS: individual doctors can lead digital transformation
+        from the bottom up.
+        <em>BMJ</em> 2023; 383.
+      </div>
+
+      <div class="pub-entry">
+        Fahim A, <span class="pub-me">Rosewarne D</span>.
+        Tissue sampling in suspected sarcoidosis: can we avoid mediastinal procedures?
+        <em>American Journal of Respiratory and Critical Care Medicine</em> 2020; 202(9):1321.
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-group-label">Conference presentations — ECR 2025</div>
+
+      <div class="pub-entry">
+        <span class="pub-me">Rosewarne D</span>.
+        <a href="https://dx.doi.org/10.26044/ecr2025/C-24712" target="_blank" rel="noopener">
+          LLM-facilitated analysis of recommendation rate for further imaging in acute CT
+          brain studies at a large district general hospital.</a>
+        <em>European Congress of Radiology</em>, Vienna, 2025.
+      </div>
+
+      <div class="pub-entry">
+        <span class="pub-me">Rosewarne D</span>.
+        <a href="https://dx.doi.org/10.26044/ecr2025/C-17408" target="_blank" rel="noopener">
+          LLM evaluation of CTPA yield at scale.</a>
+        <em>European Congress of Radiology</em>, Vienna, 2025.
+      </div>
+
+      <div class="pub-entry">
+        <span class="pub-me">Rosewarne D</span>.
+        <a href="https://dx.doi.org/10.26044/ecr2025/C-17526" target="_blank" rel="noopener">
+          Is your PACS overweight? The benefits of lossless image compression.</a>
+        <em>European Congress of Radiology</em>, Vienna, 2025.
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-group-label">Earlier articles &amp; book chapters</div>
+
+      <div class="pub-entry">
+        <span class="pub-me">Rosewarne DM</span>.
+        Intravascular contrast media.
+        In: <em>Chapman &amp; Nakielny's Guide to Radiological Procedures</em>, 6th ed. Elsevier, 2017.
+      </div>
+
+      <div class="pub-entry">
+        Morgan AJ, <span class="pub-me">Rosewarne D</span>, Bapusamy A, Tanner K, Hancock J,
+        Reid D, Mathews S.
+        Application of the recent BTS guidelines to a population of nodule patients.
+        <em>Thorax</em> 2016; 71(Suppl 3):A95.
+        [<a href="https://thorax.bmj.com/content/71/Suppl_3/A95.1" target="_blank" rel="noopener">link</a>]
+      </div>
+
+      <div class="pub-entry">
+        Aktuerk D, Lutz M, <span class="pub-me">Rosewarne D</span>, Luckraz H.
+        Cheerios in the lung: a rare but characteristic radiographic sign.
+        <em>QJM</em> 2015; 108(9):743–744.
+      </div>
+
+      <div class="pub-entry">
+        Holloway BJ, <span class="pub-me">Rosewarne D</span>, Jones RG.
+        Imaging of thoracic aortic disease.
+        <em>British Journal of Radiology</em> 2011; 84(Suppl 3):S338–S354.
+      </div>
+
+      <div class="pub-entry">
+        <span class="pub-me">Rosewarne D</span>, Reynolds JH, Trotter SE, Burge PS.
+        The idiopathic interstitial pneumonias — a survival guide.
+        <em>Imaging</em> 2008; 20(4):289–302.
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-group-label">Physics — doctoral and early career</div>
+
+      <div class="pub-entry">
+        <span class="pub-me">Rosewarne D</span>, Sarkar S.
+        Rigorous theory of photon localizability.
+        <em>Quantum Optics</em> 1992; 4(6):405.
+      </div>
+
+      <div class="pub-entry">
+        <span class="pub-me">Rosewarne DM</span>.
+        Ground-state quantum fluctuations in a scalar Hopfield dielectric.
+        <em>Quantum Optics</em> 1991; 3(4):193.
+      </div>
+    </div>
+  </section>
+
+  <!-- POSITIONS -->
+  <section class="section" id="positions">
+    <h2>Positions Held</h2>
+
+    <div class="pos-entry">
+      <div class="pos-header">
+        <h3>Consultant Radiologist</h3>
+        <span class="pos-period">2009 – present</span>
+      </div>
+      <div class="pos-org">New Cross Hospital, Wolverhampton</div>
+      <p class="pos-desc">General radiology service (CT, MRI, ultrasound, fluoroscopy, plain film), including image-guided biopsy and drainage, acute emergency rota, and subspecialty work in chest imaging, head and neck, and cardiac CT. Clinical tutor to radiology trainees 2014–2022; FRCR Part 1 Physics Examiner 2017–2022.</p>
+    </div>
+
+    <div class="pos-entry">
+      <div class="pos-header">
+        <h3>Visiting Researcher</h3>
+        <span class="pos-period">2024 – present</span>
+      </div>
+      <div class="pos-org">Centre for Vision, Speech and Signal Processing, University of Surrey</div>
+      <p class="pos-desc">Member of Professor Gustavo Carneiro's group, contributing to the PecMan project on human-AI cooperation and algorithmic fairness in mammogram interpretation.</p>
+    </div>
+
+    <div class="pos-entry">
+      <div class="pos-header">
+        <h3>Member, iReferCDS Committee</h3>
+        <span class="pos-period">2024 – 2025</span>
+      </div>
+      <div class="pos-org">Royal College of Radiologists</div>
+      <p class="pos-desc">Provided data science input to the RCR on the ongoing implementation of the iRefer Clinical Decision Support tool.</p>
+    </div>
+
+    <div class="pos-entry">
+      <div class="pos-header">
+        <h3>Radiology Lead, West Midlands Clinical Research Network</h3>
+        <span class="pos-period">2022 – 2024</span>
+      </div>
+      <div class="pos-org">NIHR / NHS England</div>
+      <p class="pos-desc">NIHR-funded role supporting radiology research in the West Midlands, with a personal focus on natural language processing of radiology reports for clinical audit at scale.</p>
+    </div>
+
+    <div class="pos-entry">
+      <div class="pos-header">
+        <h3>Topol Fellow</h3>
+        <span class="pos-period">2022 – 2023</span>
+      </div>
+      <div class="pos-org">Health Education England / NHS England</div>
+      <p class="pos-desc">Fellowship in digital transformation in health. Project work centred on the installation and clinical evaluation of AI-assisted chest radiograph reporting.</p>
+    </div>
+
+    <div class="pos-entry">
+      <div class="pos-header">
+        <h3>Analyst</h3>
+        <span class="pos-period">1992 – 1994</span>
+      </div>
+      <div class="pos-org">Logica Defence and Civil Government</div>
+      <p class="pos-desc">Machine vision and signal processing, using analysis and programming, on projects contracted by UK Government departments.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- SIDEBAR -->
+<aside>
+
+  <div class="aside-block">
+    <h4>Education</h4>
+    <ul class="aside-list">
+      <li>
+        <span class="year">2007</span>
+        FRCR
+        <span class="inst">Royal College of Radiologists</span>
+      </li>
+      <li>
+        <span class="year">2003</span>
+        MRCP
+        <span class="inst">Royal College of Physicians</span>
+      </li>
+      <li>
+        <span class="year">1999</span>
+        MB ChB with Honours
+        <span class="inst">University of Birmingham</span>
+      </li>
+      <li>
+        <span class="year">1992</span>
+        PhD, Physics
+        <span class="inst">University of London</span>
+        <span class="thesis">"Photon Localisation in Spontaneous Parametric Downconversion"</span>
+      </li>
+      <li>
+        <span class="year">1987</span>
+        BA, Natural Sciences (Physics &amp; Theoretical Physics, Pt II)
+        <span class="inst">University of Cambridge</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="aside-block">
+    <h4>Projects</h4>
+    <div class="projects-aside">
+      <a href="https://www.digitalelf.org" target="_blank" rel="noopener">
+        <span class="proj-name">The DigitalElf Project</span>
+        <span class="proj-desc">Clinician-led digital medicine with open-source tools</span>
+      </a>
+      <a href="https://autoteach.test.33n.co.uk/" target="_blank" rel="noopener">
+        <span class="proj-name">Auto-TeaCH</span>
+        <span class="proj-desc">Automated Teaching Case Harvester for radiology</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="aside-block">
+    <h4>Clinical Interests</h4>
+    <ul class="aside-list">
+      <li>Chest imaging &amp; ILD</li>
+      <li>Lung cancer screening (TLHC)</li>
+      <li>Interventional ultrasound</li>
+      <li>Head &amp; neck radiology</li>
+      <li>Cardiac CT</li>
+    </ul>
+  </div>
+
+  <div class="aside-block contact-block">
+    <h4>Contact</h4>
+    <a href="mailto:david.rosewarne@gmail.com">
+      <span class="contact-label">Email</span>
+      david.rosewarne@gmail.com
+    </a>
+    <a href="https://www.digitalelf.org" target="_blank" rel="noopener">
+      <span class="contact-label">Web</span>
+      digitalelf.org
+    </a>
+    <a href="https://autoteach.test.33n.co.uk/" target="_blank" rel="noopener">
+      <span class="contact-label">Project</span>
+      autoteach.test.33n.co.uk
+    </a>
+  </div>
+
+</aside>
+</div><!-- /page -->
+
+<footer>
+  <p>Dr David Rosewarne &nbsp;&middot;&nbsp; MA (Cantab), PhD, MB ChB (Hons), MRCP, FRCR &nbsp;&middot;&nbsp; GMC: 4607308</p>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+</script>
+</body>
+</html>
